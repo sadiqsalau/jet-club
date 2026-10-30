@@ -21,6 +21,7 @@ Class files for the JET Club programming class.
 | `my-page/index.html` | Your own page to design and publish: change the parts marked ✏️ |
 | `school_quiz.py` | Bonus: a quiz game to make your own |
 | `guess_the_number.py` | Bonus: a guessing game |
+| `day-1-cheatsheet.pdf` | Today's words, Python and HTML basics, and the publishing steps, on two pages you can print |
 
 **Python files:** open them in **Thonny** and press **F5**. No Thonny? Copy the file into [OnlineGDB's Python editor](https://www.onlinegdb.com/online_python_compiler) and press **Run**.
 
