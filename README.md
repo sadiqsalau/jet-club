@@ -26,6 +26,11 @@ Class files for the JET Club programming class.
 
 **Web pages:** open them in **Sublime Text** (or **Notepad++** on Windows) to change them, and double-click them to see them in your browser. After each change, save and refresh the browser.
 
+**On a tablet or Chromebook?** You can do everything in the browser:
+- **Python:** copy the file into [OnlineGDB's Python editor](https://www.onlinegdb.com/online_python_compiler) and press **Run**.
+- **Web pages:** copy the file into [W3Schools Tryit](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_basic), replacing what's there, and press **Run**.
+- **Publishing:** in your `username.github.io` repository, use **Add file › Create new file**, name it `index.html`, and paste your finished page.
+
 ## Put your page online
 
 1. Create a free account on [GitHub](https://github.com/signup).
