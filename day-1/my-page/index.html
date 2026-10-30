@@ -1,0 +1,245 @@
+<!doctype html>
+<!--
+  My page
+  Change the parts marked ✏️, save, then refresh the browser to see your changes.
+  Notes like this one don't show on the page.
+-->
+<html lang="en">
+  <!-- The head holds information about the page; it doesn't show on the page itself -->
+  <head>
+    <!-- Lets the page show any language and emoji -->
+    <meta charset="UTF-8" />
+    <!-- Makes the page fit phone screens -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ✏️ 1. The title in the browser tab -->
+    <title>About Me</title>
+
+    <!-- CSS: the clothes of the page (colours, sizes, shapes) -->
+    <style>
+      /* ✏️ 2. Your colours (try names like tomato, gold, teal, or codes like #8b5cf6) */
+      :root {
+        --main-color: #22c55e; /* Headings, buttons and the photo circle */
+        --background: #0f172a; /* Behind everything */
+        --card: #1e293b; /* The box your page sits in */
+        --text: #f8fafc; /* Normal text */
+      }
+
+      /* ----- The design: you can change these too, but you don't have to ----- */
+      /* Makes sizes include the padding, so boxes are the size you set */
+      * {
+        box-sizing: border-box;
+      }
+
+      /* The whole page: background colour, font, and centring the card */
+      body {
+        margin: 0;
+        padding: 24px 16px;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        background: var(--background);
+        color: var(--text);
+        font-family: system-ui, sans-serif;
+        line-height: 1.5;
+      }
+
+      /* The rounded box that holds everything */
+      .card {
+        width: 100%;
+        max-width: 480px; /* Never wider than this on big screens */
+        display: flex;
+        flex-direction: column;
+        gap: 16px; /* Space between each part */
+        padding: 24px; /* Space inside the box */
+        border-radius: 24px; /* Round corners */
+        background: var(--card);
+        text-align: center;
+      }
+
+      /* The circle with your emoji or photo */
+      .avatar {
+        width: 96px;
+        height: 96px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%; /* 50% turns a square into a circle */
+        background: var(--main-color);
+        font-size: 48px; /* The size of the emoji */
+      }
+
+      /* Your photo fills the circle and is cropped to fit */
+      .avatar img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Your name */
+      h1 {
+        margin: 0;
+        color: var(--main-color);
+        overflow-wrap: anywhere; /* Long names wrap instead of spilling out */
+      }
+
+      /* The small headings: About me, Things I love, My dream job */
+      h2 {
+        margin: 0;
+        font-size: 18px;
+        color: var(--main-color);
+      }
+
+      /* Removes the browser's extra space around paragraphs and lists */
+      p,
+      ul {
+        margin: 0;
+      }
+
+      /* The list of things you love, side by side */
+      ul {
+        padding: 0;
+        list-style: none; /* No bullet points */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      /* Each thing you love, shaped like a pill */
+      li {
+        padding: 4px 12px;
+        border-radius: 999px;
+        border: 2px solid var(--main-color);
+      }
+
+      /* The fun fact button */
+      button {
+        padding: 12px 20px;
+        border: none;
+        border-radius: 999px;
+        background: var(--main-color);
+        color: var(--background);
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer; /* Shows a hand when you point at it */
+      }
+
+      /* Where the fun fact appears */
+      #fact {
+        min-height: 1.5em; /* Keeps the space, so the page doesn't jump */
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <!-- The body holds everything you see on the page -->
+  <body>
+    <!-- The card: everything inside it shows in the rounded box -->
+    <main class="card">
+      <!-- ✏️ 3. Your picture: put a photo named "photo" (photo.jpg or photo.png)
+               in this folder, next to index.html. No photo? Your emoji shows instead.
+               Copy an emoji from emojipedia.org. -->
+      <div class="avatar">
+        <!-- Your emoji -->
+        <span>😎</span>
+        <!-- Your photo goes here automatically -->
+        <img id="photo" alt="My photo" hidden />
+      </div>
+
+      <!-- ✏️ 4. Your first name only, and a short line about you -->
+      <h1>Amina</h1>
+      <p>Student, footballer and future engineer.</p>
+
+      <!-- ✏️ 5. About you -->
+      <h2>About me</h2>
+      <p>I'm learning to code at JET Club. I want to build apps that help people in Nigeria.</p>
+
+      <!-- ✏️ 6. Things you love (add or remove <li> lines) -->
+      <h2>Things I love</h2>
+      <ul>
+        <li>Football</li>
+        <li>Jollof rice</li>
+        <li>Music</li>
+        <li>Maths</li>
+      </ul>
+
+      <!-- ✏️ 7. Your dream job -->
+      <h2>My dream job</h2>
+      <p>Software engineer</p>
+
+      <!-- The fun fact button: JavaScript below makes it work -->
+      <button type="button" id="fact-button">Tell me a fun fact</button>
+
+      <!-- The fun fact appears here when you click -->
+      <p id="fact"></p>
+    </main>
+
+    <!-- JavaScript: the brain of the page (what happens when you click) -->
+    <script>
+      // ✏️ 8. Your fun facts (each one in quotes, with a comma after it)
+      const facts = [
+        "I can solve a Rubik's cube.",
+        "I have two brothers.",
+        "I've never missed a football match on TV.",
+      ];
+
+      // ----- The code that shows a random fact when the button is clicked -----
+      // Find the button and the place where the fact appears
+      const button = document.getElementById("fact-button");
+      const factText = document.getElementById("fact");
+
+      // When the button is clicked...
+      button.addEventListener("click", function () {
+        // ...pick a random position in the list of facts
+        const index = Math.floor(Math.random() * facts.length);
+        // ...and show that fact on the page
+        factText.textContent = facts[index];
+      });
+
+      // ----- The code that shows your photo, if there's one in the folder -----
+      // The file names to look for (computers care about capital letters)
+      const photoNames = [
+        "photo.jpg",
+        "photo.jpeg",
+        "photo.png",
+        "photo.JPG",
+        "photo.JPEG",
+        "photo.PNG",
+        "Photo.jpg",
+        "Photo.png",
+      ];
+      // Find the photo spot inside the circle
+      const photo = document.getElementById("photo");
+
+      // Try one file name; if it isn't there, try the next one
+      function tryPhoto(index) {
+        // No more names to try: keep the emoji
+        if (index >= photoNames.length) return;
+
+        const test = new Image();
+
+        // Found it: show the photo over the emoji
+        test.onload = function () {
+          photo.src = test.src;
+          photo.hidden = false;
+        };
+
+        // Not found: try the next name
+        test.onerror = function () {
+          tryPhoto(index + 1);
+        };
+
+        test.src = photoNames[index];
+      }
+
+      // Start with the first name in the list
+      tryPhoto(0);
+    </script>
+  </body>
+</html>
