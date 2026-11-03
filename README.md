@@ -23,12 +23,12 @@ Class files for the JET Club programming class.
 | `guess_the_number.py` | Bonus: a guessing game |
 | `day-1-cheatsheet.pdf` | Today's words, Python and HTML basics, and the publishing steps, on two pages you can print |
 
-**Python files:** open them in **Thonny** and press **F5**. No Thonny? Copy the file into [OnlineGDB's Python editor](https://www.onlinegdb.com/online_python_compiler) and press **Run**.
+**Python files:** open them in **Thonny** and press **F5**. No Thonny? Paste the file into the box at the bottom of [JupyterLite Python](https://jupyterlite.github.io/demo/repl/index.html?kernel=python&toolbar=1) and press **▶** at the top left.
 
 **Web pages:** open them in **Sublime Text** (or **Notepad++** on Windows) to change them, and double-click them to see them in your browser. After each change, save and refresh the browser.
 
 **On a tablet or Chromebook?** You can do everything in the browser:
-- **Python:** copy the file into [OnlineGDB's Python editor](https://www.onlinegdb.com/online_python_compiler) and press **Run**.
+- **Python:** paste the file into the box at the bottom of [JupyterLite Python](https://jupyterlite.github.io/demo/repl/index.html?kernel=python&toolbar=1) and press **▶** at the top left. The first load takes a moment.
 - **Web pages:** copy the file into [W3Schools Tryit](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_basic), replacing what's there, and press **Run**.
 - **Publishing:** in your `username.github.io` repository, use **Add file › Create new file**, name it `index.html`, and paste your finished page.
 
